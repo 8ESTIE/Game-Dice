@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<!-- Titel im Browser -->
+		<title>Kniffel - Praktikantenaufgabe</title>
+
+		<!-- Zeichenkodierung bestimmen -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<!-- Stylesheet und Javascript einbinden -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<button class="dice disabled" onclick="toggleDice(this)"></button>
+			<!-- this ist der Zeiger auf das HTML Element, welches das Ereignis, hier onclick, auslöst -->
+			<button class="dice disabled" onclick="toggleDice(this)"></button>
+			<button class="dice disabled" onclick="toggleDice(this)"></button>
+			<button class="dice disabled" onclick="toggleDice(this)"></button>
+			<button class="dice disabled" onclick="toggleDice(this)"></button>
+
+			<!-- Button zum Würfeln -->
+			<button id="roll" onclick="rollDices()">Würfeln</button>
+			<p class="wurfenUbrig">Noch: 3</p>
+
+			<!-- Wertetabelle -->
+			<table class="punktefelder">
+				<tbody>
+					<!-- Alle Einser zählen -->
+					<tr class="einser">
+						<th>Einser</th>
+						<td class="combi disabled" onclick="assignDices(this, 1)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<!-- Alle Zweier zählen -->
+					<tr class="zweier">
+						<th>Zweier</th>
+						<td class="combi disabled" onclick="assignDices(this, 2)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<!-- @TODO Erweitern Sie die Wertetabelle um Dreier, Vierer, Fuenfer, Sechser, Dreierpasch und Viererpasch -->
+
+					<tr class="dreier">
+						<th>Dreier</th>
+						<td class="combi disabled" onclick="assignDices(this, 3)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="vierer">
+						<th>Vierer</th>
+						<td class="combi disabled" onclick="assignDices(this, 4)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="funfer">
+						<th>Funfer</th>
+						<td class="combi disabled" onclick="assignDices(this, 5)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="sechser">
+						<th>Sechser</th>
+						<td class="combi disabled" onclick="assignDices(this, 6)"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="dreierpasch">
+						<th>Dreierpasch</th>
+						<td class="combi disabled" onclick="assignDices(this, 'dreierpasch')"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="viererpasch">
+						<th>Viererpasch</th>
+						<td class="combi disabled" onclick="assignDices(this, 'viererpasch')"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="fullhouse">
+						<th>Fullhouse</th>
+						<td class="combi disabled" onclick="assignDices(this, 'fullhouse')"></td>
+						<td class="savedDices"></td>
+						
+					</tr>
+
+					<tr class="kleineStrasse">
+						<th>Kleine Strasse</th>
+						<td class="combi disabled" onclick="assignDices(this, 'kleineStrasse')"></td>
+						<td class="savedDices"></td>
+					</tr>
+
+					<tr class="grosseStrasse">
+						<th>Grosse Strasse</th>
+						<td class="combi disabled" onclick="assignDices(this, 'grosseStrasse')"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="kniffel">
+						<th>Kniffel</th>
+						<td class="combi disabled" onclick="assignDices(this, 'kniffel')"></td>
+						<td class="savedDices"></td>
+
+					</tr>
+
+					<tr class="chance">
+						<th>Chance</th>
+						<td class="combi disabled" onclick="assignDices(this, 'chance')"></td>
+						<td class="savedDices"></td>
+					</tr>
+
+					<!-- Gesamtpunktzahl -->
+					<tr>
+						<th>Gesamt</th>
+						<td id="score">0</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+@media all {
+	/* Allgemeine Darstellung */
+	html, body {
+		font-family: Verdana, Arial, Helvetica;
+	}
+
+	/* Spielfeld zentrieren */
+	.container {
+		width: 50%;
+		margin: auto;
+		text-align: center;
+	}
+
+	/* Darstellung eines Würfels */
+	.dice {
+		width: 50px;
+		height: 50px;
+		margin: 10px;
+		cursor: pointer;
+		display: inline-block;
+		border: 2px solid black;
+		border-radius: 10px;
+		background: white left top no-repeat;
+		background-size: contain;
+	}
+
+	/* Würfel mit dem Wert 1 */
+	.dice[value="1"] {
+		background-image: url("img/1.png");
+	}
+
+	/* Würfel mit dem Wert 2 */
+	.dice[value="2"] {
+		background-image: url("img/2.png");
+	}
+
+	/* Würfel mit dem Wert 3 */
+	.dice[value="3"] {
+		background-image: url("img/3.png");
+	}
+
+	/* Würfel mit dem Wert 4 */
+	.dice[value="4"] {
+		background-image: url("img/4.png");
+	}
+
+	/* Würfel mit dem Wert 5 */
+	.dice[value="5"] {
+		background-image: url("img/5.png");
+	}
+
+	/* Würfel mit dem Wert 6 */
+	.dice[value="6"] {
+		background-image: url("img/6.png");
+	}
+
+	/* Würfel Darstellung wenn dieser gehalten wird */
+	.dice[data-hold] {
+		border-color: red;
+		opacity: 0.5;
+	}
+
+	/* Mouseover über einen Würfel */
+	.dice:hover {
+		box-shadow: 0 0 8px black;
+		transform: scale(1.2);
+	}
+
+	.disabled {
+		pointer-events: none;
+	}
+
+	/* Darstellung des Buttons */
+	#roll {
+		cursor: pointer;
+		display: block;
+		padding: 10px;
+		margin: 0 auto;
+	}
+
+	/* Tabelle darstellen */
+	table {
+		width: 100%;
+	}
+
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		width: 40%;
+		padding: 10px;
+	}
+
+	.savedDices {
+		width: 20%;
+	}
+
+	/* Felder bei einem Mouseover hervorheben */
+	td:not(#score, .savedDices){
+		cursor: pointer;
+	}
+
+	td:not(#score, .savedDices):hover {
+		background-color: lightgrey;
+	}
+}
